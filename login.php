@@ -19,7 +19,7 @@
 		$username = mysqli_real_escape_string($db,$_POST['username']);
     $pass = mysqli_real_escape_string($db,$_POST['pass']);
 
-		$sql = "SELECT * FROM loginChat where custID = '$username'";
+		$sql = "SELECT * FROM loginChat where username = '$username'";
 		$result = mysqli_query($db,$sql);
 		if($result->num_rows == 1){
 			$error_msg = "Username already exists";
