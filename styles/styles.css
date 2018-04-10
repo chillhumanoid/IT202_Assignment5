@@ -1,0 +1,27 @@
+h1{
+	text-align: center;
+}
+table{
+	margin:auto;
+	border-collapse: collapse;
+	background-color: #a8a6a6;
+}
+table, th, td{
+	border: 1px solid black;
+}
+td{
+	text-align: center;
+}
+.labels{
+	text-align: left;
+}
+.labels2{
+	text-align: right;
+}
+.centerMessage{
+	text-align: center;
+}
+
+.buttons{
+	width: 150px;
+}
