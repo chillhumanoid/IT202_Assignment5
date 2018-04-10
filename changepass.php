@@ -48,7 +48,7 @@
 
 						</td>
 						<td>
-							<input type="submit" class = "buttons" name = "submit" value="Login" />
+							<input type="submit" class = "buttons" name = "submit" value="Change" />
 						</td>
 					</tr>
 				</table>
