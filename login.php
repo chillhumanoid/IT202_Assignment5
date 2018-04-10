@@ -33,6 +33,10 @@
 			}
 		}
 	}
+  if(isset($_POST['forgotPass'])){
+    header('Location: https://web.njit.edu/~jgt8/Assignment5/changepass.php');
+    exit;
+  }
 
 ?>
 <html>
