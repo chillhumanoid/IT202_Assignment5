@@ -64,7 +64,7 @@
 							<input type="submit" name = "newAccount" value="Create New Account"/>
 						</td>
             <td>
-              <input type="button" name = "forgotPass" value="Forgot Password?"/>
+              <input type="submit" name = "forgotPass" value="Forgot Password?"/>
             </td>
 						<td>
 							<input type="submit" class = "buttons" name = "submit" value="Login" />
