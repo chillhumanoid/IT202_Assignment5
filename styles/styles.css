@@ -7,13 +7,13 @@ table{
 	background-color: #a8a6a6;
 }
 table, th, td{
-	border: 1px solid black;
+
 }
 td{
 	text-align: center;
 }
 .labels{
-	text-align: left;
+	text-align: center;
 }
 .labels2{
 	text-align: right;

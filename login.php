@@ -47,20 +47,21 @@
 			<form action="" method="post">
 				<table>
 					<tr>
-						<th colspan="4">Chill Chat Platform</th>
+						<th colspan="3">Chill Chat Platform</th>
 					</tr>
 					<tr>
-						<td class = "labels">Username:</td>
-						<td colspan="2"><input type="text" name="username" id="custID" maxlength="14" required></td>
+						<td colspan="3" class="labels">Username:   &nbsp;   <input type="text" name="username" id="custID" maxlength="14" required></td>
 					</tr>
 					<tr>
-						<td class="labels">Password:</td>
-						<td colspan="2"><input type="password" name="pass" id="custPass" maxlength="20" required></td>
+						<td colspan="3" class="labels">Password: &nbsp;     <input type="password" name="pass" id="custPass" maxlength="20" required></td>
 					</tr>
 					<tr>
 						<td>
 							<input type="submit" name = "newAccount" value="Create New Account"/>
 						</td>
+            <td>
+              <input type="button" name = "forgotPass" value="Forgot Password?"/>
+            </td>
 						<td>
 							<input type="submit" class = "buttons" name = "submit" value="Login" />
 						</td>
