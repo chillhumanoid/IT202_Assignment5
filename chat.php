@@ -34,6 +34,9 @@
 						</td>
           </tr>
 				</table>
+        <p>
+          
+        </p>
         <table>
 					<tr>
 						<th colspan="3">Listen</th>
@@ -41,6 +44,9 @@
 					<tr>
 						<td colspan="3" class="labels">Username:   &nbsp;   <input type="text" name="username" id="username" maxlength="14"><input type="submit" name="listen" value = "listen" /></td>
 					</tr>
+          <tr id="listenbox">
+
+          </tr>
 				</table>
 			</form>
 			<Center>
