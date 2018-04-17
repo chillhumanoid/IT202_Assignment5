@@ -11,7 +11,7 @@
 		if($result->num_rows == 0){
 			$error_msg = "invalid customer ID or Password";
 		}else{
-			header('Location: https://web.njit.edu/~jgt8/Assignment5/filler.html');
+			header('Location: https://web.njit.edu/~jgt8/Assignment5/chat.php');
 			exit;
 		}
 	}
@@ -33,10 +33,6 @@
 			}
 		}
 	}
-  if(isset($_POST['forgotPass'])){
-    header('Location: https://web.njit.edu/~jgt8/Assignment5/changepass.php');
-    exit;
-  }
 
 ?>
 <html>
@@ -64,7 +60,7 @@
 							<input type="submit" name = "newAccount" value="Create New Account"/>
 						</td>
             <td>
-              <input type="submit" name = "forgotPass" value="Forgot Password?"/>
+              <input type="button" name = "forgotPass" value="Forgot Password?" onclick="window.location.href='https://web.njit.edu/~jgt8/Assignment5/changepass.php'"/>
             </td>
 						<td>
 							<input type="submit" class = "buttons" name = "submit" value="Login" />
