@@ -24,12 +24,17 @@
 		if($result->num_rows == 1){
 			$error_msg = "Username already exists";
 		}else if($result->num_rows == 0){
-			$sql = "INSERT INTO loginChat (username, password) VALUES ('$username', '$pass')";
+			$sql = "INSERT INTO chat (username, message) VALUES ('$username', '')";
 			if (mysqli_query($db, $sql)){
-				header('Location: https://web.njit.edu/~jgt8/Assignment5/creationsuccess.php');
-				exit;
+				$sql = "INSERT INTO loginChat (username, password) VALUES ('$username','$password')";
+				if(mysqli_query($db, $sql)){
+					header('Location: https://web.njit.edu/~jgt8/Assignment5/creationsuccess.php');
+					exit;
+				}else{
+					$error_msg = mysqli_error($db);
+				}
 			}else{
-				$error_msg = "";
+				$error_msg = mysqli_error($db);
 			}
 		}
 	}
