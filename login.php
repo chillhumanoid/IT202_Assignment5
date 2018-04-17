@@ -11,8 +11,14 @@
 		if($result->num_rows == 0){
 			$error_msg = "invalid customer ID or Password";
 		}else{
-			header('Location: https://web.njit.edu/~jgt8/Assignment5/chat.php');
-			exit;
+			$message = "";
+			$sql = "UPDATE chat SET message = '$message' WHERE username='$username'";
+			if(mysqli_query($db, $sql)){
+				header('Location: https://web.njit.edu/~jgt8/Assignment5/chat.php');
+				exit;
+			}else{
+
+			}
 		}
 	}
 	if(isset($_POST['newAccount'])){
@@ -34,7 +40,7 @@
 
 				}
 			}else{
-				
+
 			}
 		}
 	}

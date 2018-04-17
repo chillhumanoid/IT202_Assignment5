@@ -2,7 +2,7 @@
   session_start();
   include("include/config.php");
   include("include/header.php");
-  include("include/chatcontroller.php");
+  include("include/chatcontrol.php");
 ?>
 
 <html>
@@ -72,7 +72,7 @@
                 $("#chatbox").html('<td>please enter a valid login</td>');
               }
            }
-        })
+        });
       }
       function checkuser(){
         var username = document.getElementById( "luser" ).value;
@@ -115,6 +115,8 @@
           success: function(msg){
             if(msg==""){
               $("#listenbox").html('This user has nothing typed');
+            }else if (msg=="192389138fj39f3od9393jf939fj3j93f") {
+              $("#listenbox").html('This user is logged off');
             }else{
               $("#listenbox").html(msg);
             }
