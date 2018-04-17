@@ -96,7 +96,16 @@
         }
       }
       function uploadChat(){
+        var username = document.getElementById("username").value;
+        var chat = document.getElementById("chat").value;
+        $.ajax({
+          type: "POST",
+          url: "uploadChat.php",
+          data: {user:username, message:chat},
+          success: function(){
 
+           }
+        })
       }
     </script>
     <noscript>
