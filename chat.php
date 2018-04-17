@@ -26,13 +26,21 @@
 						<td colspan="3" class="labels">Password: &nbsp;     <input type="password" name="pass" id="pass" maxlength="20" value="<?php echo $_SESSION['pass'];?>" onkeyup="checklogin();"></td>
 					</tr>
           <tr id="chatbox">
-              <td>Chat: <input type="text" name="chat" id="chat"/></td>
+              <td>Chat: <input type="text" name="chat" id="chat" onkeyup="uploadChat();"/></td>
           </tr>
           <tr>
 						<td>
 							<input type="submit" name = "logout" value="logout"/>
 						</td>
           </tr>
+				</table>
+        <table>
+					<tr>
+						<th colspan="3">Listen</th>
+					</tr>
+					<tr>
+						<td colspan="3" class="labels">Username:   &nbsp;   <input type="text" name="username" id="username" maxlength="14"><input type="submit" name="listen" value = "listen" /></td>
+					</tr>
 				</table>
 			</form>
 			<Center>
@@ -51,12 +59,15 @@
           data: {user:username, password:pass},
           success: function(msg){
               if(msg == "YES"){
-                $("#chatbox").html('<td>Chat: <input type="text" name="chat" id="chat"/></td>')
+                $("#chatbox").html('<td>Chat: <input type="text" name="chat" id="chat" onkeyup="uploadChat();/></td>')
               }else if (msg == "NO") {
                 $("#chatbox").html('<td>please enter a valid login</td>')
               }
            }
         })
+      }
+      function uploadChat(){
+
       }
     </script>
     <noscript>
