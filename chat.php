@@ -61,7 +61,6 @@
       function checklogin(){
         var username = document.getElementById( "username" ).value;
         var pass = document.getElementById( "pass" ).value;
-        var chatbox = $('#chatbox');
         $.ajax({
           type: "POST",
           url: "checklogin.php",
@@ -78,7 +77,6 @@
       function checkuser(){
         var username = document.getElementById( "luser" ).value;
         var usere = document.getElementById("username").value;
-        var listenbox = $('#listenbox');
         if(username == usere){
           $("#listenbox").html('Username must be different than your own');
         }else{
