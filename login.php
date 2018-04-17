@@ -26,15 +26,15 @@
 		}else if($result->num_rows == 0){
 			$sql = "INSERT INTO chat (username, message) VALUES ('$username', '')";
 			if (mysqli_query($db, $sql)){
-				$sql = "INSERT INTO loginChat (username, password) VALUES ('$username','$password')";
+				$sql = "INSERT INTO loginChat (username, password) VALUES ('$username','$pass')";
 				if(mysqli_query($db, $sql)){
 					header('Location: https://web.njit.edu/~jgt8/Assignment5/creationsuccess.php');
 					exit;
 				}else{
-					$error_msg = mysqli_error($db);
+
 				}
 			}else{
-				$error_msg = mysqli_error($db);
+				
 			}
 		}
 	}
