@@ -20,7 +20,7 @@
 						<th colspan="3">Chill Chat Platform</th>
 					</tr>
 					<tr>
-						<td colspan="3" class="labels">Username:   &nbsp;   <input type="text" name="username" id="username" maxlength="14" value="<?php echo $_SESSION['username'];?> " onkeyup="checklogin();"></td>
+						<td colspan="3" class="labels">Username:   &nbsp;   <input type="text" name="username" id="username" maxlength="14" value="<?php echo $_SESSION['username'];?>" onkeyup="checklogin();"></td>
 					</tr>
 					<tr>
 						<td colspan="3" class="labels">Password: &nbsp;     <input type="password" name="pass" id="pass" maxlength="20" value="<?php echo $_SESSION['pass'];?>" onkeyup="checklogin();"></td>
@@ -42,10 +42,13 @@
 						<th colspan="3">Listen</th>
 					</tr>
 					<tr>
-						<td colspan="3" class="labels">Username:   <input type="text" name="luser" id="luser" maxlength="14"><input type="button" name="listen" value = "listen" onclick="checkuser();"/></td>
+						<td colspan="3" class="labels">Username:   <input type="text" name="luser" id="luser" maxlength="14"></td>
+              <td><input type="button" name="listen" value = "listen" onclick="checkuser();"/></td>
 					</tr>
-          <tr id="listenbox">
+          <tr>
+            <td id="listenbox">
 
+            </td>
           </tr>
 				</table>
 			</form>
@@ -65,7 +68,7 @@
           data: {user:username, password:pass},
           success: function(msg){
               if(msg == "YES"){
-                $("#chatbox").html('<td>Chat: <input type="text" name="chat" id="chat" onkeyup="uploadChat();/></td>');
+                $("#chatbox").html('<td>Chat: <input type="text" name="chat" id="chat" onkeyup="uploadChat();"/></td>');
               }else if (msg == "NO") {
                 $("#chatbox").html('<td>please enter a valid login</td>');
               }
@@ -73,22 +76,22 @@
         })
       }
       function checkuser(){
-        var username = document.getElementById( "lusername" ).value;
-        var user = document.getElementById("username").value;
+        var username = document.getElementById( "luser" ).value;
+        var usere = document.getElementById("username").value;
         var listenbox = $('#listenbox');
-        if(username==user){
-          $("#listenbox").html('<td>Username must be different than your own</td>');
+        if(username == usere){
+          $("#listenbox").html('Username must be different than your own');
         }else{
           $.ajax({
             type: "POST",
             url: "checkulogin.php",
-            data: {user:username, password:pass},
+            data: {user:username},
             success: function(msg){
                 if(msg == "YES"){
-                  $("#listenbox").html('<td>success(temp)</td>');
+                  $("#listenbox").html('success(temp)');
                   //getchat();
                 }else if (msg == "NO") {
-                  $("#listenbox").html('<td>That user doesnt exist</td>');
+                  $("#listenbox").html('That user doesnt exist');
                 }
              }
           })
