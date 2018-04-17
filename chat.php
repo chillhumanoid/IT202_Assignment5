@@ -39,14 +39,14 @@
         </p>
         <table>
 					<tr>
-						<th colspan="3">Listen</th>
+						<th colspan="2">Listen</th>
 					</tr>
 					<tr>
-						<td colspan="3" class="labels">Username:   <input type="text" name="luser" id="luser" maxlength="14"></td>
+						<td class="labels">Username:   <input type="text" name="luser" id="luser" maxlength="14"></td>
               <td><input type="button" name="listen" value = "listen" onclick="checkuser();"/></td>
 					</tr>
           <tr>
-            <td id="listenbox">
+            <td colspan="2"id="listenbox">
 
             </td>
           </tr>
