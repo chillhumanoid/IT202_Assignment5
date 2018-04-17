@@ -86,8 +86,7 @@
             data: {user:username},
             success: function(msg){
                 if(msg == "YES"){
-                  $("#listenbox").html('success(temp)');
-                  //getchat();
+                  setInterval(getChat, 10);
                 }else if (msg == "NO") {
                   $("#listenbox").html('That user doesnt exist');
                 }
@@ -105,6 +104,21 @@
           success: function(){
 
            }
+        })
+      }
+      function getChat(){
+        var username = document.getElementById("luser").value;
+        $.ajax({
+          type:"POST",
+          url: "getChat.php",
+          data: {user:username},
+          success: function(msg){
+            if(msg==""){
+              $("#listenbox").html('This user has nothing typed');
+            }else{
+              $("#listenbox").html(msg);
+            }
+          }
         })
       }
     </script>
