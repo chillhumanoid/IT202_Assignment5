@@ -63,7 +63,7 @@
         var pass = document.getElementById( "pass" ).value;
         $.ajax({
           type: "POST",
-          url: "backend/checklogin.php",
+          url: "checklogin.php",
           data: {user:username, password:pass},
           success: function(msg){
               if(msg == "YES"){
@@ -82,7 +82,7 @@
         }else{
           $.ajax({
             type: "POST",
-            url: "backend/checkulogin.php",
+            url: "checkulogin.php",
             data: {user:username},
             success: function(msg){
                 if(msg == "YES"){
@@ -99,7 +99,7 @@
         var chat = document.getElementById("chat").value;
         $.ajax({
           type: "POST",
-          url: "backend/uploadChat.php",
+          url: "uploadChat.php",
           data: {user:username, message:chat},
           success: function(){
 
@@ -110,7 +110,7 @@
         var username = document.getElementById("luser").value;
         $.ajax({
           type:"POST",
-          url: "backend/getChat.php",
+          url: "getChat.php",
           data: {user:username},
           success: function(msg){
             if(msg==""){
