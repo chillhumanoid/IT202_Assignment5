@@ -20,13 +20,13 @@
 						<th colspan="3">Chill Chat Platform</th>
 					</tr>
 					<tr>
-						<td colspan="3" class="labels">Username:   &nbsp;   <input type="text" name="username" id="username" maxlength="14" value="<?php echo $_SESSION['username'];?>"></td>
+						<td colspan="3" class="labels">Username:   &nbsp;   <input type="text" name="username" id="username" maxlength="14" value="<?php echo $_SESSION['username'];?> " onkeyup="checklogin();"></td>
 					</tr>
 					<tr>
-						<td colspan="3" class="labels">Password: &nbsp;     <input type="password" name="pass" id="pass" maxlength="20" value="<?php echo $_SESSION['pass'];?>"></td>
+						<td colspan="3" class="labels">Password: &nbsp;     <input type="password" name="pass" id="pass" maxlength="20" value="<?php echo $_SESSION['pass'];?>" onkeyup="checklogin();"></td>
 					</tr>
           <tr id="chatbox">
-              <td><input type="text" name="chat" id="chat"/></td>
+              <td>Chat: <input type="text" name="chat" id="chat"/></td>
           </tr>
           <tr>
 						<td>
@@ -41,46 +41,23 @@
 		</div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
-          $('#username').change(function(){
-            var username = $("#username").val();
-            var pass = $("#pass").val();
-            var chatbox = $('#chatbox');
-            $.ajax({
-              type: "POST",
-              url: "checklogin.php",
-              data: "username=" + username + " pass=" + pass,
-              success: function(msg){
-                $("#chatbox").ajaxComplete(function(event,request){
-                  if(msg == "YES"){
-                    chatbox.html('<td><input type="text" name="chat" id="chat"/></td>')
-                  }else if (msg == "NO") {
-                    chatbox.html('<td>please enter a valid login</td>')
-                  }
-                })
+      function checklogin(){
+        var username = document.getElementById( "username" ).value;
+        var pass = document.getElementById( "pass" ).value;
+        var chatbox = $('#chatbox');
+        $.ajax({
+          type: "POST",
+          url: "checklogin.php",
+          data: {user:username, password:pass},
+          success: function(msg){
+              if(msg == "YES"){
+                $("#chatbox").html('<td>Chat: <input type="text" name="chat" id="chat"/></td>')
+              }else if (msg == "NO") {
+                $("#chatbox").html('<td>please enter a valid login</td>')
               }
-            })
-          })
-          $('#pass').change(function(){
-            var username = $("#username").val();
-            var pass = $("#pass").val();
-            var chatbox = $('#chatbox');
-            $.ajax({
-              type: "POST",
-              url: "checklogin.php",
-              data: "username=" + username + " pass=" + pass,
-              success: function(msg){
-                $("#chatbox").ajaxComplete(function(event,request){
-                  if(msg == "YES"){
-                    chatbox.html('<td><input type="text" name="chat" id="chat"/></td>')
-                  }else if (msg == "NO") {
-                    chatbox.html('<td>please enter a valid login</td>')
-                  }
-                })
-              }
-            })
-          })
+           }
         })
+      }
     </script>
     <noscript>
       <h3>this site requires javascript</h3>
